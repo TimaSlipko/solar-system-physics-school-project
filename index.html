@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Планети</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://unpkg.com/three@0.126.0/build/three.min.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://unpkg.com/three@0.126.0/examples/js/controls/OrbitControls.js"></script>
+
+    <script src="scripts.js"></script>
+</head>
+<body>
+    <div class="controls">
+        <div class="controls-block">
+            <div class="title"><p>Налаштування</p></div>
+            <div class="block">
+                <div class="title"><p>Камера (обрано <span id="selected-camera"></span>)</p></div>
+    
+                <div class="camera-views">
+                    <div class="camera-view" onclick="setCamera('top')"><p>згори</p></div>
+                    <div class="camera-view" onclick="setCamera('perspective')"><p>перспектива</p></div>
+                    <div class="camera-view" onclick="setCamera('free')"><p>вільна</p></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls-block">
+            <div class="title"><p>Тіла (натисніть для інформації)</p></div>
+            <div class="block planets-list">
+                <p onclick="choosePlanet(1)">Меркурій</p>
+                <p onclick="choosePlanet(2)">Венера</p>
+                <p onclick="choosePlanet(3)">Земля</p>
+                <p onclick="choosePlanet(4)">Марс</p>
+                <p onclick="choosePlanet(5)">Юпітер</p>
+                <p onclick="choosePlanet(6)">Сатурн</p>
+                <p onclick="choosePlanet(7)">Уран</p>
+                <p onclick="choosePlanet(8)">Нептун</p>
+            </div>
+        </div>
+
+        <div class="controls-block">
+            <div class="title"><p>Управління вільною камерою</p></div>
+            <div class="block">
+                <div class="text"><p>Лівою кнопкою миші - крутити</p></div>
+                <div class="text"><p>Правою кнопкою миші - переміщатись</p></div>
+                <div class="text"><p>Коліщатко миші - приблизити або віддалити</p></div>
+            </div>
+        </div>
+
+        <div class="controls-block">
+            <div class="title"><p>Розʼяснення</p></div>
+            
+            <div>
+                <p class="footnote">Розмір сонця зменшений задля зручності спостереження.</p>
+                <p class="footnote">Характеристики (швидкість планет, відстані, розмір тощо) змінені відповідно інших планет, але не відповідно інших характеристик.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-planet" id="about-planet">
+        <div class="name" id="planet-name"></div>
+        <div class="info" id="planet-info"></div>
+    </div>
+</body>
+</html>
